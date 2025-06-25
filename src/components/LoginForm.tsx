@@ -10,6 +10,8 @@ const LoginForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('LoginForm: Form submitted with password:', password);
+    
     setIsLoading(true);
     setError('');
 
@@ -17,8 +19,13 @@ const LoginForm = () => {
     await new Promise(resolve => setTimeout(resolve, 500));
 
     const success = login(password);
+    console.log('LoginForm: Login result:', success);
+    
     if (!success) {
       setError('كلمة المرور غير صحيحة');
+      console.log('LoginForm: Login failed, showing error');
+    } else {
+      console.log('LoginForm: Login successful');
     }
     
     setIsLoading(false);
