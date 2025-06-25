@@ -55,8 +55,6 @@ export const useAuth = () => {
     localStorage.removeItem('taskMonitorAuth');
   };
 
-  console.log('useAuth: Current auth state:', authState);
-
   return {
     ...authState,
     login,
