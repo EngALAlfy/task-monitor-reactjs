@@ -26,6 +26,10 @@ const LoginForm = () => {
       console.log('LoginForm: Login failed, showing error');
     } else {
       console.log('LoginForm: Login successful');
+      // Force a small delay to ensure state update is processed
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
     }
     
     setIsLoading(false);
@@ -79,11 +83,6 @@ const LoginForm = () => {
             )}
           </button>
         </form>
-
-        <div className="text-center text-sm text-gray-500 space-y-1">
-          <p>للمسؤول: 00114477</p>
-          <p>للمستخدم: 123456789</p>
-        </div>
       </div>
     </div>
   );

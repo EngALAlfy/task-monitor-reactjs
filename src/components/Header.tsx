@@ -19,6 +19,10 @@ const Header = () => {
   const handleLogout = () => {
     console.log('Header: Logout button clicked');
     logout();
+    // Force page reload after logout
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
   };
 
   return (
