@@ -2,6 +2,7 @@
 import React from 'react';
 import { LogOut } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
+import ExportButtons from './ExportButtons';
 
 const Header = () => {
   const { role, logout } = useAuth();
@@ -40,6 +41,8 @@ const Header = () => {
           </div>
 
           <div className="flex items-center space-x-4 space-x-reverse">
+            {role === 'admin' && <ExportButtons />}
+            
             <div className={`px-3 py-1 rounded-full text-white text-sm font-medium ${getRoleBadgeColor()}`}>
               {getRoleDisplay()}
             </div>
